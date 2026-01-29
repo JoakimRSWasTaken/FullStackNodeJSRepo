@@ -1,6 +1,6 @@
-## FullStackNodeJSRepo
+# FullStackNodeJSRepo
 
-# 29/1 - Intro 
+## 29/1 - Intro 
 2 obligatoriske projekter I løbet af kurset.
 Mandatory I: Dokumentationswebsite.
 Mandatory II: Et auth system.
