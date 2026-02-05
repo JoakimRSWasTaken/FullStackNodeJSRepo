@@ -24,8 +24,18 @@ function genericActionPerformer(name, action) {
     return action(name);
 }
 
+// Example of a callback function (Here it is just a function though)
 function eatingAction(name) {
     return `${name} is eating`;
 }
 
+// Using the eatingAction function as a callback function
 console.log(genericActionPerformer("Valdemar", eatingAction));
+
+// No one uses anonymous functions anymore. Arrow functions are cooler.
+// Arrow functions work in a specific way with the this keyword. They bind it in the correct scope.
+const runningAction = (name) => {
+    return `${name} is running`;
+};
+
+console.log(genericActionPerformer("Sidi", runningAction));
