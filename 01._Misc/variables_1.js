@@ -35,3 +35,11 @@
     people.push("Victor");
 
     console.log(people);
+
+    // How to define string in JS:
+    // ""
+    // ''
+    // ``
+    // Makes it possible to put the different defining symbols in.
+    // Backticks make string interpolation (${...}) possible as well as multi line strings.
+    
