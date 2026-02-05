@@ -19,4 +19,7 @@ Forskellen mellem JSON og et JS Object er syntaks. Data er stillet op som key-va
 JS har ASI (Automatic Semicolon Inserter). Man behøver ikke sætte semikolon efter hvert statement, men man kan sagtens gøre det selv. En god idé er dog at gøre det efter et Object der fylder flere linjer indeni en function.
 
 ## 5/2 - Functions
-Functions er first class citizen i JavaScript. Det betyder at de bliver hoisted i callstacken og dermed kan blive kaldt overalt 
+Functions er first class citizen i JavaScript. Det betyder at de bliver hoisted i callstacken og dermed kan blive kaldt overalt.
+
+<img width="2440" height="988" alt="image" src="https://github.com/user-attachments/assets/bf74ef04-b78b-40ca-8353-997cf7b2759c" />
+
