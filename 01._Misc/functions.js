@@ -39,3 +39,9 @@ const runningAction = (name) => {
 };
 
 console.log(genericActionPerformer("Sidi", runningAction));
+
+// My solution
+console.log(genericActionPerformer("Kristian", (name) => {return `${name} is laughing`}));
+
+// Ideal solution
+console.log(genericActionPerformer("Kristian", (name) => `${name} is laughing`));
