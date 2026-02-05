@@ -21,5 +21,8 @@ JS har ASI (Automatic Semicolon Inserter). Man behøver ikke sætte semikolon ef
 ## 5/2 - Functions
 Functions er first class citizen i JavaScript. Det betyder at de bliver hoisted i callstacken og dermed kan blive kaldt overalt.
 
+En callback-funktion er en funktion der bliver givet videre til en anden funktion som parameter.
+Den kan blive kaldt i denne funktion, men behøver det ikke.
+
 <img width="2440" height="988" alt="image" src="https://github.com/user-attachments/assets/bf74ef04-b78b-40ca-8353-997cf7b2759c" />
 
