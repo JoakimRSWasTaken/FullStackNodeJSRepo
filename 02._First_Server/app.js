@@ -1,3 +1,4 @@
+// With the dependencies set up in package.json, npm install express in bash
 // Import express as a variable with 'require' to access the express-library easily.
 // const express = require('express');
 
