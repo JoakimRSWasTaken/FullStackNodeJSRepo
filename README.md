@@ -26,3 +26,4 @@ Den kan blive kaldt i denne funktion, men behøver det ikke.
 
 <img width="2440" height="988" alt="image" src="https://github.com/user-attachments/assets/bf74ef04-b78b-40ca-8353-997cf7b2759c" />
 
+## 12/2 - Loops, fetch, server, HTML and a bit of XSS + sanitation

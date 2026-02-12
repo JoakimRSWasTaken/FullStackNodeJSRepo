@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Server</title>
+</head>
+<body>
+    <h1>Frontpage</h1>
+
+    <h3 id="snowstorm-warning"></h3>
+
+    <script>
+
+        // create a fetch to /snowstorms and console.log the warning
+
+        // const snowstormWarning = async () => {
+        //     const response = await fetch('https//:localhost:8080/snowstorms');
+        //     const result = await response.json();
+        //     console.log(result);
+        //     return result;
+        // }
+
+        
+        const snowstormWarning = fetch('/snowstorms')
+        .then((response) => response.json())
+        .then((result) => {
+            console.log(result);
+
+            snowstormWarningH3 = document.getElementById('snowstorm-warning');
+            // Do not use innerHtml to avoid XSS (Cross-site scripting)
+            snowstormWarningH3.textContent = result.data;
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>
