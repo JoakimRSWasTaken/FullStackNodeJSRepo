@@ -15,7 +15,7 @@ const public = "this variable is named public";
     {
         var someVariable = false;
     }
-    //console.log(someVariable);
+    console.log(someVariable);
 }
 
 {
