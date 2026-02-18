@@ -10,7 +10,7 @@ const movies = [
 ];
 
 let currentIdForPostRequest = movies.length + 1;
-console.log(currentIdForPostRequest);
+//console.log(currentIdForPostRequest);
 
 app.get('/movies', (req, res) => {
     res.send({ data: movies });
@@ -45,6 +45,59 @@ app.post('/movies', (req, res) => {
 
     currentIdForPostRequest++;
     res.send(movieToAdd);
+});
+
+app.put('/movies/:id', (req, res) => {
+    let movieId = parseInt(req.params.id);
+    let moviesArrayIndexToPatch = movies.findIndex(movie => movie.id === movieId);
+
+    // findIndex returnerer -1 hvis den ikke finder noget der passer kriteriet
+    if (moviesArrayIndexToPatch === -1) {
+        return res.status(404).json({ message: "Movie not found." });
+    };
+
+    let updatedMovie = {
+        id: movieId,
+        title: req.body.title,
+        releaseYear: req.body.releaseYear
+    };
+    
+    movies[moviesArrayIndexToPatch] = updatedMovie;
+
+    res.send(updatedMovie);
+});
+
+app.patch('/movies/:id', (req, res) => {
+    let movieId = parseInt(req.params.id);
+    let moviesArrayIndexToPatch = movieId - 1;
+    
+    if (moviesArrayIndexToPatch === -1) {
+        return res.status(404).json({ message: "Movie not found." });
+    };
+
+    let updates = req.body;
+
+    // Spread notation til at 
+    let updatedMovie = {
+        ...movies[moviesArrayIndexToPatch],
+        ...updates
+    };
+
+    res.send(updatedMovie);
+});
+
+app.delete('/movies/:id', (req, res) => {
+    let movieId = parseInt(req.params.id);
+    let moviesArrayIndexToDelete = movieId - 1;
+    
+    if (moviesArrayIndexToDelete === -1) {
+        return res.status(404).json({ message: "Movie not found." });
+    };
+
+    movies.splice(moviesArrayIndexToDelete, 1);
+    currentIdForPostRequest--;
+
+    res.send({ data: `Movie with id ${movieId} has been deleted.` });
 });
 
 app.listen(8080);
