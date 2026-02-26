@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection</title>
+</head>
+<body>
+    
+    <h1>Sad to see you go, brother</h1>
+
+    <!-- Redirect with an anchor tag -->
+    <a href="/">Take me awaaaaay</a>
+
+    <script>
+        // Dynamic programmatic way to redirect. setTimeout is a funtion in the global object called Window.
+        setTimeout(() => {
+            // window.location.href = '/';
+            // location.href = '/';
+            location.replace = 'https://death-timer.vercel.app/';
+        }, 3000);
+    </script>
+</body>
+</html>

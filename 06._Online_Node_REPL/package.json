@@ -1,0 +1,17 @@
+{
+  "name": "online_node-repl",
+  "version": "0.0.1",
+  "description": "A website that lets you run Node in a RPL",
+  "keywords": [
+    "node",
+    "repl",
+    "website"
+  ],
+  "license": "ISC",
+  "author": "JRS",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

@@ -31,6 +31,11 @@ app.get('/snowstorms', (req, res) => {
     });
 });
 
+// Added 26/02 to practice redirection --> backend redirection between routes vs. frontend redirection that is between html files
+app.get('/forecast', (req, res) => {
+    res.redirect('/snowstorms');
+});
+
 // We can send data in a GET request with:
 // path variables --> The correct way for REST APIs
 app.get('/cars/:carModel/:year', (req, res) => {
