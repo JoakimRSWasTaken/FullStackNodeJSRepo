@@ -2,14 +2,18 @@ import express from 'express';
 
 const app = express();
 
-app.use(express.static('./public'));
+app.use(express.static('public'));
 app.use(express.json());
 import path from 'path';
 
 // ======================= Pages =======================
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve('public/frontpage/frontpage.html'));
+    res.sendFile(path.resolve('public/frontend/frontend.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.resolve('public/about/about.html'));
 });
 
 // ======================= API =======================
