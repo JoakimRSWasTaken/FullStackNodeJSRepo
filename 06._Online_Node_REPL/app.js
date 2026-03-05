@@ -27,6 +27,18 @@ app.post('/api/repl', (req, res) => {
     res.send({ data: replCode });
 });
 
-app.listen(8080, () => {
-    console.log('Server is listening on port', 8080);
+// Dette gør så vi selv kan definere hvilken port vi kører på. Hvis man kører den samme command, der står i vores start-dev script,
+// og vælger en port at sætte som miljøvariabel, kan man køre på den port man vil.
+const PORT = process.env.PORT || 8080;
+
+console.log("NODE_ENV: " + process.env.NODE_ENV);
+
+// app.listen(PORT, () => {
+//     console.log('Server is listening on port', PORT);
+// });
+
+//Vi bruger variablen server og kalder den senere i callback-funktionen. Når vi kalder server.address().port får vi det mest "truthful" svar
+
+const server = app.listen(PORT, () => {
+    console.log('Server is listening on port', server.address().port);
 });
