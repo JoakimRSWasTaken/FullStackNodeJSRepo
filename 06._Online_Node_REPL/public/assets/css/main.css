@@ -2,3 +2,26 @@
     height: 10vh;
     min-height: 4rem;
 }
+
+/* nav {
+    height: 14vh;
+}
+
+main {
+    min-height: calc(100vh - 25vh);
+}
+
+footer {
+    height: 5vh;
+} */
+
+/* Vi  */
+body {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}

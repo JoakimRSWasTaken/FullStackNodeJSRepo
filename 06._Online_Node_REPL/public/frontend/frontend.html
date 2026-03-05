@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <title>Online Node.js REPL</title>
 </head>
 <body>
@@ -17,13 +17,19 @@
         </div>
     </nav>
 
+    <main>
+        <h1>Online Node.js REPL</h1>
 
-    <h1>Online Node.js REPL</h1>
+        <h2>
+            > ...
+        </h2>    
+    </main>
 
-    <h2>
-        > ...
-    </h2>    
-
+    <footer> <!-- Sticky footer vs. footer der bare er i bunden -->
+        <span id="copyright-year"></span>
+    </footer>
+    
     <script src="frontend/repl.js"></script>
+    <script src="assets/js/footer.js"></script>
 </body>
 </html>
