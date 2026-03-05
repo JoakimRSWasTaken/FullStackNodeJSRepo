@@ -9,26 +9,40 @@ import path from 'path';
 // ======================= Pages =======================
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve('public/frontend/frontend.html'));
+    res.sendFile(path.resolve('public/pages/frontend/frontend.html'));
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile(path.resolve('public/about/about.html'));
+    res.sendFile(path.resolve('public/pages/about/about.html'));
 });
 
 // ======================= API =======================
 
+import { getOrCreateSandboxContext, executeCodeInSandbox } from './util/replUtil.js';
+
 app.post('/api/repl', (req, res) => {
     // Optional chaining of req.body to return undefined if req.body is that. Avoids crash if we look for replCode in undefined
-    let replCode = req.body?.replCode;
+    // let replCode = req.body?.replCode;
+    if (!req.body) {
+        return res.status(400).send( {errorMessage: 'Missing a JSON body' });
+    }
+    const { replCode, sandboxId } = req.body;
 
     if(!replCode) {
         res.status(400).send({ errorMessage: 'Missing the key replCode in the JSON body' });
     }
 
-    replCode = replCode.replace('console.log("', ''). replace('")');
+    const sandbox = getOrCreateSandboxContext(sandboxId);
 
-    res.send({ data: replCode });
+    const { error, success, output, result } = executeCodeInSandbox(sandbox, replCode);
+
+    if (error) {
+        res.status(500).send({ errorMessage: 'Error executing the provided code' });
+    }
+
+    // replCode = replCode.replace('console.log("', ''). replace('")');
+    
+    res.send({ data: { success, output, result } });
 });
 
 // Dette gør så vi selv kan definere hvilken port vi kører på. Hvis man kører den samme command, der står i vores start-dev script,
