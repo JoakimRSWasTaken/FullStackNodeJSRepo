@@ -36,8 +36,12 @@ app.post('/api/repl', (req, res) => {
 
     const { error, success, output, result } = executeCodeInSandbox(sandbox, replCode);
 
+
     if (error) {
-        res.status(500).send({ errorMessage: 'Error executing the provided code' });
+        res.status(500).send({ 
+            data : { error },
+                errorMessage: 'Error executing the provided code',
+        });
     }
 
     // replCode = replCode.replace('console.log("', ''). replace('")');
@@ -49,7 +53,7 @@ app.post('/api/repl', (req, res) => {
 // og vælger en port at sætte som miljøvariabel, kan man køre på den port man vil.
 const PORT = process.env.PORT || 8080;
 
-console.log("NODE_ENV: " + process.env.NODE_ENV);
+// console.log("NODE_ENV: " + process.env.NODE_ENV);
 
 // app.listen(PORT, () => {
 //     console.log('Server is listening on port', PORT);
