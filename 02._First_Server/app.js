@@ -62,6 +62,9 @@ app.get('/proxy', (req, res) => {
 
 });
 
+// We want to collect all routes in a router
+// route
+        // endpoint     // call-back function / route handler (Express terminology)
 app.post('/dinosaurs', (req, res) => {
     console.log(req.body);
     

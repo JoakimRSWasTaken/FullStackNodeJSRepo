@@ -15,7 +15,7 @@ footer {
     height: 5vh;
 } */
 
-/* Vi  */
+/* Vi bruger flex til at markere siden og siger at main fylder 1 i denne */
 body {
     min-height: 95vh;
     display: flex;
