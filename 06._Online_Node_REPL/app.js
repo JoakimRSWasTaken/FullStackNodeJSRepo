@@ -8,17 +8,13 @@ import path from 'path';
 
 // ======================= Pages =======================
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve('public/pages/frontend/frontend.html'));
-});
+import pagesRouter from "./routers/pagesRouter.js"
 
-app.get('/about', (req, res) => {
-    res.sendFile(path.resolve('public/pages/about/about.html'));
-});
+app.use(pagesRouter);
 
 // ======================= API =======================
 
-import replRouter from './routers/replRouter.js';
+import replRouter from "./routers/replRouter.js";
 
 app.use(replRouter);
 
