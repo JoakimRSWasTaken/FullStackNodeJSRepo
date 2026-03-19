@@ -22,7 +22,7 @@ const balloonAnimals = [
     { type: "Koala", difficulty: 5.0 },
     { type: "Dog", difficulty: 2.5 },
     { type: "Giraffe", difficulty: 1.5, isTall: true }
-]
+];
 
 // Make all the difficulty levels for the balloon animals 3.0 except for Koala
 const updatedDifficultyBalloonAnimals = balloonAnimals.map((balloonAnimal) => {

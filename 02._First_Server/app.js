@@ -48,7 +48,6 @@ app.get('/bag', (req, res) => {
     // the query string starts with ? and is followed by key-value pairs:
     // bag?item1=durum&item2=burger
     res.send({ data: req.query });
-
 });
 
 // Lav en proxy til www.google.com/

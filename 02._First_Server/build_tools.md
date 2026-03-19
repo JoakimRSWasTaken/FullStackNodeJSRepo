@@ -8,5 +8,3 @@ pom.xml             package.json
 meta                meta
 dependencies        dependencies
 lifecycles          scripts
-
-
