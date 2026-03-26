@@ -3,7 +3,7 @@ import { Router } from 'express'
 const router = Router();
 
 function ipLogger(req, res, next) {
-    console.log(req.ip);
+    // console.log(req.ip);
     next();
 }
 
@@ -12,7 +12,7 @@ function ipLogger(req, res, next) {
 router.use(ipLogger);
 
 // If you would want it for a specific route, you can do it like this
-router.use('/room', ipLogger);
+// router.use('/room', ipLogger);
 
 // Middleware functions are usually named is(...something), e.g. isAuthenticated(req, res, next) {}.
 // This is only about Express middleware. Avoid confusion since middleware is many things in different contexts.

@@ -7,6 +7,14 @@ import helmet from 'helmet';
 app.use(helmet()); // helmet() exists for us to be able to pass an options object as an argument. Helmet has req, res, next.
 // google npm helmet for more information
 
+import session from 'express-session';
+app.use(session({
+    secret: 'keyboard cat',     // todo do not push this
+    resave: false,              // when you are in a route without the session there is no reason to save it
+    saveUninitialized: true,    // If you enter a route without a session, do you want to make a new one?
+    cookie: { secure: false }    // If this is true, it will not work and you will not be able to debug. 
+}));                            // secure: true means that it runs over HTTPS
+
 // Keep the middleware in the top of the page
 import { rateLimit } from 'express-rate-limit';
 
@@ -36,6 +44,9 @@ app.use(middlewareRouter);
 
 import authRouter from "./routers/authRouter.js";
 app.use(authRouter);
+
+import sessionRouter from "./routers/sessionRouter.js";
+app.use(sessionRouter);
 
 // fallback route /{*splat} is the new syntax in Express 5.x, before it was just /*
 app.get('/{*splat}', (req, res) => {

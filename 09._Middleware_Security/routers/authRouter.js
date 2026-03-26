@@ -1,5 +1,13 @@
 import { Router } from 'express';
 
+/*
+    Auth: Authorization and Authorization
+
+    Authentication: Knowing that the user is who they say they are
+    Authorization: Knowing if the user has the privileges to access the resources
+
+*/
+
 const router = Router();
 
 function isAdmin(req, res, next) {
@@ -17,7 +25,7 @@ function isAdmin(req, res, next) {
 }
 
 router.get('/auth/admin', isAdmin, (req, res) => {
-    console.log(req.user);
+    // console.log(req.user);
     res.send({ data: 'You are an admin, you can see this: 10 points for Gryffindor!' });
 });
 
