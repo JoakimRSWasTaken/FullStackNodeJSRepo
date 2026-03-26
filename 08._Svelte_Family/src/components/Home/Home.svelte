@@ -1,3 +1,15 @@
+<script>
+import { fridgeMessages } from "../../stores/fridgeStore.js";
+
+// Putting a $ in front gets you the object. Without it you get the Store itself.
+console.log($fridgeMessages);
+
+</script>
+
+{#each $fridgeMessages as fridgeMessage}
+    <p>{fridgeMessage.name || "Household"}: {fridgeMessage.message}</p>
+{/each}
+
 <slot></slot>
 
 <div id="welcome-mat">
