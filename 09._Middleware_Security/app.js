@@ -1,3 +1,10 @@
+import dotenv from 'dotenv/config';
+// import dotenv from 'dotenv';
+
+// dotenv.config();
+
+// console.log(process.env.SESSION_SECRET);
+
 import express from 'express';
 
 const app = express();
@@ -9,11 +16,13 @@ app.use(helmet()); // helmet() exists for us to be able to pass an options objec
 
 import session from 'express-session';
 app.use(session({
-    secret: 'keyboard cat',     // todo do not push this
-    resave: false,              // when you are in a route without the session there is no reason to save it
-    saveUninitialized: true,    // If you enter a route without a session, do you want to make a new one?
-    cookie: { secure: false }    // If this is true, it will not work and you will not be able to debug. 
-}));                            // secure: true means that it runs over HTTPS
+    secret: process.env.SESSION_SECRET,     // todo do not push this
+    resave: false,                          // when you are in a route without the session there is no reason to save it
+    saveUninitialized: true,                // If you enter a route without a session, do you want to make a new one?
+    cookie: { secure: false }               // If this is true, it will not work and you will not be able to debug. 
+}));
+
+
 
 // Keep the middleware in the top of the page
 import { rateLimit } from 'express-rate-limit';
