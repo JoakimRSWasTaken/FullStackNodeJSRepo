@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static('public'));
 app.use(express.json());
-import path from 'path';
+app.use(express.urlencoded());
 
 // ======================= Pages =======================
 
@@ -17,6 +17,10 @@ app.use(pagesRouter);
 import replRouter from "./routers/replRouter.js";
 
 app.use(replRouter);
+
+import contactRouter from "./routers/contactRouter.js"
+
+app.use(contactRouter);
 
 // We have moved the routes from API to replRouter.js
 

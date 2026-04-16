@@ -14,6 +14,7 @@ import Visitors from "./pages/Visitors/Visitors.svelte";
   </nav>
 
   <div>
+    <Route path='/'>Nørrebronx Eateries</Route>
     <Route path='/restaurants'><Restaurants /></Route>
     <Route path='/visitors'><Visitors /></Route>
     <Route path='/about'>

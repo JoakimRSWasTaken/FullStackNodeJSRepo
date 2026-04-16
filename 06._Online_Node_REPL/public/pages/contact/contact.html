@@ -1,3 +1,15 @@
-    <h1>Contact</h1>
+<h1>Contact</h1>
 
-    <h3>Contact info</h3>
+<h3>Contact Us</h3>
+<form action="/api/contact" method="POST">
+    <fieldset>
+        <label>Name</label>
+        <input name="name" type="text" placeholder="Name..." value="TestName"></input>
+        <label>Email</label>
+        <input name="email" type="email" placeholder="Email..." value="test@test.com"></input>
+        <label>Message</label>
+        <textarea name="message" cols="100" rows="8" placeholder="Type message here..."></textarea>
+    </fieldset>
+
+    <button>Send Message</button>
+</form>
