@@ -21,7 +21,7 @@ function isAdmin(req, res, next) {
         };
         return next();
     }
-    res.status(403).send({ errorMessage: "You don't have the right, O you don't have the right."});
+    res.status(403).send({ errorMessage: "You don't have the right, O, you don't have the right."});
 }
 
 router.get('/auth/admin', isAdmin, (req, res) => {
